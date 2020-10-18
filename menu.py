@@ -4,11 +4,11 @@ This file contains the menu for the analyze program.
 
 import analyzer
 
-def menu_choice():
+def menu_choice(file_name):
     """
     Containts the if-statment to reach the different functions.
     """
-    file_name = "phil.txt"
+    #file_name = "phil.txt"
 
     print("------------------------") 
     print("1 - Counts lines")
@@ -30,13 +30,11 @@ def menu_choice():
 
     # Choice 2 --- Counts words
     elif choice == "2":
-        words = analyzer.count_words(file_name)
-        print("Words: " + str(words))
+        analyzer.count_words(file_name)
 
     # Choice 3 --- Counts letter
     elif choice == "3":
-       letters = analyzer.count_letters(file_name)
-       print("Letters: " + str(letters))
+        analyzer.count_letters(file_name)
 
     # Choice 4 --- Count word frequency
     elif choice == "4":
@@ -55,6 +53,7 @@ def menu_choice():
         new_name = analyzer.change_file()
         file_name = new_name
         print(file_name)
+        return file_name
 
     elif choice == "q":
         return False 

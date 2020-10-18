@@ -9,7 +9,8 @@ def count_lines(file):
     try:
         file_open = open(file)  
     except:
-        print("There is no such file:", file_open)
+        print(repr(file))
+        print("There is no such file:", file)
         exit() 
 
     count = 0
@@ -30,12 +31,12 @@ def count_words(file):
     try:
         file_open = open(file)  
     except:
-        print("There is no such file:", file_open)
+        print("There is no such file:", file)
         exit() 
 
     file_read = file_open.read()
 
-    file_trimmed = file_read.replace(',','').replace('.','').replace('-','')
+    file_trimmed = file_read.replace(',', '').replace('.', '').replace('-', '')
 
     file_array = file_trimmed.split(' ')
 
@@ -55,12 +56,12 @@ def count_letters(file):
     try:
         file_open = open(file)  
     except:
-        print("There is no such file:", file_open)
+        print("There is no such file:", file)
         exit() 
 
     file_read = file_open.read()
 
-    file_trimmed = file_read.replace(' ','').replace('\n','').replace(',','').replace('.','').replace('-','')
+    file_trimmed = file_read.replace(' ', '').replace('\n', '').replace(',', '').replace('.', '').replace('-', '')
 
     return len(file_trimmed)
 
@@ -76,14 +77,14 @@ def word_frequency(file):
     try:
         file_open = open(file)  
     except:
-        print("There is no such file:", file_open)
+        print("There is no such file:", file)
         exit() 
     
     words = count_words(file)
 
     file_read = file_open.read()
 
-    file_trimmed = file_read.replace(',','').replace('.','').replace('-','').replace('\n', '')
+    file_trimmed = file_read.replace(',', '').replace('.', '').replace('-', '').replace('\n', '')
 
     file_list = file_trimmed.split(' ')
 
